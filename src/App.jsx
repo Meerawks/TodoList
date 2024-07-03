@@ -6,11 +6,13 @@ import React, { useState, useEffect } from 'react'
 
 function App() {
 
-   const [todos, setTodos]=useState(JSON.parse(localStorage.getItem('localTodo')))
+    
+   const [todos, setTodos]=useState([])
    const[todoValue,setTodoValue]=useState('')
 
       function addTodos (newTodo){
         const updatedTodoList= [...todos,newTodo]
+        persistTodo(updatedTodoList)
         console.log(updatedTodoList)
         setTodos(updatedTodoList)
       }
@@ -18,6 +20,7 @@ function App() {
         const newTodoList=todos.filter((todo, todoIndex)=>{
           return todoIndex!=index
         })
+        persistTodo(newTodoList)
         setTodos(newTodoList)
       }
       function editTodo(index){
@@ -25,13 +28,21 @@ function App() {
         setTodoValue(editedValue)
         deleteTodo(index)
       }
-  
+      useEffect(()=>{
+        if(!localStorage){
+          return
+          }
+          let localTodo=JSON.parse(localStorage.getItem('localTodo'))
+          if(!localTodo){
+            return
+          }
+          setTodos(localTodo)
+      },[])
 
-
-
-      useEffect(() => {
-        localStorage.setItem('localTodo', JSON.stringify(todos));
-      }, [todos]);
+     function persistTodo(newList){
+        localStorage.setItem('localTodo', JSON.stringify(newList));
+        console.log("Todos: ", newList)
+      }
 
 
   
