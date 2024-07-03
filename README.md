@@ -6,4 +6,5 @@ A simple todo list with React + Vite
    <li>React Props</li>
    <li>React Componenets</li>
    <li>React State variables</li>
+  <li>React Hooks useEffect()</li>
 </ul>
