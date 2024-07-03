@@ -2,11 +2,11 @@
 import './App.css'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function App() {
 
-   const [todos, setTodos]=useState([])
+   const [todos, setTodos]=useState(JSON.parse(localStorage.getItem('localTodo')))
    const[todoValue,setTodoValue]=useState('')
 
       function addTodos (newTodo){
@@ -25,6 +25,16 @@ function App() {
         setTodoValue(editedValue)
         deleteTodo(index)
       }
+  
+
+
+
+      useEffect(() => {
+        localStorage.setItem('localTodo', JSON.stringify(todos));
+      }, [todos]);
+
+
+  
 
   return (
     <>
