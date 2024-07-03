@@ -1,7 +1,6 @@
 
 import './App.css'
 import TodoInput from './components/TodoInput'
-import TodoCard from './components/TodoCard'
 import TodoList from './components/TodoList'
 import { useState } from 'react'
 
