@@ -8,3 +8,5 @@ A simple todo list with React + Vite
    <li>React State variables</li>
   <li>React Hooks useEffect()</li>
 </ul>
+
+<a href="https://react101-todolist.netlify.app/">Live Preview</a>
