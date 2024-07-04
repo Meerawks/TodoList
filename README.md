@@ -9,4 +9,4 @@ A simple todo list with React + Vite
   <li>React Hooks useEffect()</li>
 </ul>
 
-<a href="https://react101-todolist.netlify.app/" target="blank">Live Preview</a>
+<a href="https://react101-todolist.netlify.app/" target="_blank">Live Preview</a>
