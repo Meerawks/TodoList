@@ -66,3 +66,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+@media (max-width:640px){
+    .list{
+      font-size: 0.8rem;
+      width: 80%;
+    }
+    .lists{
+      width: 100%;
+    }
+    .icons i {
+      font-size: 0.8rem;
+    }
+    .icons button{
+     padding: 7px;
+      
+    }
+}
